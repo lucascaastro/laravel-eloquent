@@ -59,7 +59,7 @@ Route::get('/clients/bills/{client}', [
     'show'
 ]);
 
-Route::get('/clients/expensive/{value}', [
+Route::get('/bills/expensive/{value}', [
     BillController::class,
     'show'
 ]);
