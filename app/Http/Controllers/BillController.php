@@ -25,7 +25,7 @@ class BillController extends Controller
      */
     public function create()
     {
-        //
+        return view('clients.create');
     }
 
     /**
@@ -36,7 +36,13 @@ class BillController extends Controller
      */
     public function store(StoreBillRequest $request)
     {
-        //
+        $client = Bill::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone,
+            'id_number' => $request->id_number
+        ]);
+        return response()->json($client);
     }
 
     /**
@@ -45,9 +51,11 @@ class BillController extends Controller
      * @param  \App\Models\Bill  $bill
      * @return \Illuminate\Http\Response
      */
-    public function show(Bill $bill)
+    public function show($id)
     {
-        //
+        $result = Bill::where('client_id', '=', '' . $id . '')->get();
+
+        return $result;
     }
 
     /**
