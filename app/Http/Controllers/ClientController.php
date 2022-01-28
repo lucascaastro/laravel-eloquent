@@ -53,7 +53,7 @@ class ClientController extends Controller
      */
     public function show($name)
     {
-        $result = Client::where('name', '=', $name)->first();
+        $result = Client::where('name', 'LIKE', '%' . $name . '%')->get();
 
         return $result;
     }

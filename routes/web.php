@@ -37,3 +37,8 @@ Route::get('/clients/name/{name}', [
     ClientController::class,
     'show'
 ]);
+
+Route::get('/clients/search/{text}', [
+    ClientController::class,
+    'show'
+]);
