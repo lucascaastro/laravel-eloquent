@@ -53,7 +53,7 @@ class ClientController extends Controller
      */
     public function show()
     {
-        $result = Client::orderBy('name', 'asc')->limit(2)->get();
+        $result = Client::orderBy('name', 'desc')->limit(2)->get();
 
         return $result;
     }
