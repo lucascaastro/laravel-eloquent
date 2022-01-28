@@ -23,8 +23,12 @@ Route::get('/clients/create', [
     'create'
 ]);
 
-
 Route::post('/clients/store', [
     ClientController::class,
     'store'
+]);
+
+Route::get('/clients/show/{client}', [
+    ClientController::class,
+    'show'
 ]);
