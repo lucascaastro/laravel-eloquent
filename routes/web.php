@@ -63,3 +63,8 @@ Route::get('/bills/expensive/{value}', [
     BillController::class,
     'show'
 ]);
+
+Route::get('/bills/between/{value1}/{value2}', [
+    BillController::class,
+    'show'
+]);

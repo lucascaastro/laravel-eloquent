@@ -51,9 +51,10 @@ class BillController extends Controller
      * @param  \App\Models\Bill  $bill
      * @return \Illuminate\Http\Response
      */
-    public function show($value)
+    public function show($value1, $value2)
     {
-        $result = Bill::where('value', '>', '' . $value . '')->get();
+        $result = Bill::where('value', '>', '' . $value1 . '')
+            ->where('value', '<', '' . $value2 . '')->get();
 
         return $result;
     }
