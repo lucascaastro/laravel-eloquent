@@ -51,9 +51,9 @@ class ClientController extends Controller
      * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\Response
      */
-    public function show($name)
+    public function show()
     {
-        $result = Client::where('name', 'LIKE', '%' . $name . '%')->get();
+        $result = Client::orderBy('name', 'desc')->limit(2)->get();
 
         return $result;
     }
