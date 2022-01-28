@@ -33,7 +33,7 @@ Route::get('/clients/show/{client}', [
     'show'
 ]);
 
-Route::get('/clients/name/{client}', [
+Route::get('/clients/name/{name}', [
     ClientController::class,
     'show'
 ]);
