@@ -51,9 +51,9 @@ class BillController extends Controller
      * @param  \App\Models\Bill  $bill
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($value)
     {
-        $result = Bill::where('client_id', '=', '' . $id . '')->get();
+        $result = Bill::where('value', '>', '' . $value . '')->get();
 
         return $result;
     }
