@@ -54,7 +54,7 @@ Route::get('/clients/bills/create', [
     'create'
 ]);
 
-Route::get('/clients/bills/{id}', [
+Route::get('/clients/bills/{client}', [
     BillController::class,
     'show'
 ]);
