@@ -32,3 +32,8 @@ Route::get('/clients/show/{client}', [
     ClientController::class,
     'show'
 ]);
+
+Route::get('/clients/name/{client}', [
+    ClientController::class,
+    'show'
+]);
