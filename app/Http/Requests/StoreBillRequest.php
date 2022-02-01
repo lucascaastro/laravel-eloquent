@@ -13,7 +13,11 @@ class StoreBillRequest extends FormRequest
      */
     public function authorize()
     {
-        return $this->comment->user_id === $this->user()->name;
+        $user = auth()->user();
+        if (str_contains($user->name, 'Guest')) {
+            return false;
+        } else
+            return true;
     }
 
     /**
@@ -23,17 +27,8 @@ class StoreBillRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'name' => 'required',
-        ];
     }
     public function messages()
     {
-
-        if (str_contains('name', 'Guest')) {
-            return [
-                'name.required' => 'Usuário não autorizado',
-            ];
-        }
     }
 }
