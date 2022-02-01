@@ -69,6 +69,11 @@ Route::get('/bills/expensive/{value}', [
     'show'
 ]);
 
+Route::post('/bills/store', [
+    BillController::class,
+    'store'
+]);
+
 Route::get('/bills/between/{value1}/{value2}', [
     BillController::class,
     'show'
