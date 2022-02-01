@@ -37,10 +37,12 @@ class BillController extends Controller
     public function store(StoreBillRequest $request)
     {
         $client = Bill::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'id_number' => $request->id_number
+            'invoice' => $request->invoice,
+            'installment' => $request->installment,
+            'value' => $request->value,
+            'client_id' => $request->client_id,
+            'due_date' => $request->due_date,
+            'payment_date' => $request->payment_date
         ]);
         return response()->json($client);
     }

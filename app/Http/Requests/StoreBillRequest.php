@@ -24,14 +24,14 @@ class StoreBillRequest extends FormRequest
     public function rules()
     {
         return [
-            'value' => 'required',
+            'invoice' => 'required',
         ];
     }
     public function messages()
     {
-        if (str_contains('name', 'Guest')) {
+        if (str_contains('invoice', 'Guest')) {
             return [
-                'value.required' => 'Usuário não autorizado',
+                'invoice.required' => 'Usuário não autorizado',
             ];
         }
     }
