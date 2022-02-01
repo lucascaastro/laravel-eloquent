@@ -13,7 +13,7 @@ class StoreBillRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return $this->comment->user_id === $this->user()->name;
     }
 
     /**
@@ -24,14 +24,15 @@ class StoreBillRequest extends FormRequest
     public function rules()
     {
         return [
-            'invoice' => 'required',
+            'name' => 'required',
         ];
     }
     public function messages()
     {
-        if (str_contains('invoice', 'Guest')) {
+
+        if (str_contains('name', 'Guest')) {
             return [
-                'invoice.required' => 'Usuário não autorizado',
+                'name.required' => 'Usuário não autorizado',
             ];
         }
     }
