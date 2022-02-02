@@ -14,7 +14,7 @@ class PostService
      * @var PostRepository
      */
 
-    public function sum($num1, $num2)
+    public function sum(int $num1, int $num2)
     {
 
         DB::beginTransaction();
