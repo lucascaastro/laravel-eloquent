@@ -8,13 +8,13 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
-class PostService
+class CalculadoraService
 {
     /**
      * @var PostRepository
      */
 
-    public function sum(int $num1, int $num2)
+    public function sum($num1, $num2)
     {
 
         DB::beginTransaction();
