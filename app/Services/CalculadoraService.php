@@ -52,7 +52,7 @@ class CalculadoraService
             logger()->error($th);
             return [
                 'success' => false,
-                'message' => 'Erro ao fazer soma'
+                'message' => 'Erro ao fazer div'
             ];
         }
         DB::commit();
