@@ -35,4 +35,31 @@ class CalculadoraService
             'data' => $result
         ];
     }
+    public function div($num1, $num2)
+    {
+
+        DB::beginTransaction();
+        try {
+            $result = $num1 / $num2;
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            logger()->error($th);
+            return [
+                'success' => false,
+                'message' => 'Erro ao fazer soma'
+            ];
+            if ($num2 == 0) {
+                return [
+                    'success' => false,
+                    'message' => 'Divisão por zero'
+                ];
+            }
+        }
+        DB::commit();
+        return [
+            'success' => true,
+            'message' => 'Div feita com sucesso',
+            'data' => $result
+        ];
+    }
 }
