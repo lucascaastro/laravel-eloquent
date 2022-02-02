@@ -17,18 +17,18 @@ class PostService
     public function sum($num1, $num2)
     {
 
-        // DB::beginTransaction();
+        DB::beginTransaction();
         try {
             $result = $num1 + $num2;
         } catch (\Throwable $th) {
-            // DB::rollBack();
+            DB::rollBack();
             logger()->error($th);
             return [
                 'success' => false,
                 'message' => 'Erro ao fazer soma'
             ];
         }
-        // DB::commit();
+        DB::commit();
         return [
             'success' => true,
             'message' => 'Soma feita com sucesso',
