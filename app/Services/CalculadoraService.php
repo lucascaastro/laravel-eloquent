@@ -40,6 +40,12 @@ class CalculadoraService
 
         DB::beginTransaction();
         try {
+            if ($num2 == 0) {
+                return [
+                    'success' => false,
+                    'message' => 'Divisão por zero'
+                ];
+            }
             $result = $num1 / $num2;
         } catch (\Throwable $th) {
             DB::rollBack();
@@ -48,12 +54,6 @@ class CalculadoraService
                 'success' => false,
                 'message' => 'Erro ao fazer soma'
             ];
-            if ($num2 == 0) {
-                return [
-                    'success' => false,
-                    'message' => 'Divisão por zero'
-                ];
-            }
         }
         DB::commit();
         return [
