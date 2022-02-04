@@ -15,10 +15,10 @@ class BillFactory extends Factory
     public function definition()
     {
         return [
-            'invoice' => $this->faker->randomDigit('número de 4 dígitos aleatório'),
-            'installment' => $this->faker->randomDigit('número de 1 dígito aleatório'),
+            'invoice' => $this->faker->name('número de 4 dígitos aleatório'),
+            'installment' => $this->faker->name('número de 1 dígito aleatório'),
             'client_id' => User::factory()->create->id,
-            'value' => $this->faker->randomDigit('número de telefone falso'),
+            'value' => $this->faker->name('número de telefone falso'),
             'due_date' =>  $this->faker->name('data entre now e +1 week'),
             'payment_date' =>  $this->faker->name('data entre -1 week e now'),
         ];
