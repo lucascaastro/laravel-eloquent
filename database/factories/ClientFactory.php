@@ -18,7 +18,7 @@ class ClientFactory extends Factory
             'name' => $this->faker->sentence(1),
             'email' => $this->faker->sentence(1),
             'phone' => $this->faker->sentence(1),
-            'id_number' => $this->faker->sentence(),
+            'id_number' =>  User::factory()->create()->id,
         ];
     }
 }
