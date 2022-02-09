@@ -19,8 +19,8 @@ class BillFactory extends Factory
             'installment' => $this->faker->randomNumber(1),
             'client_id' => User::factory()->create()->id,
             'value' => $this->faker->randomFloat(NULL, 0, 99),
-            'due_date' =>  $this->faker->dateTimeBetween('now', '+1 week'),
-            'payment_date' =>  $this->faker->dateTimeBetween('-1 week', 'now'),
+            'due_date' =>  $this->faker->dateTimeBetween('now', '+1 week', NULL),
+            'payment_date' =>  $this->faker->dateTimeBetween('-1 week', 'now', NULL),
         ];
     }
 }
