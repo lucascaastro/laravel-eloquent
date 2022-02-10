@@ -21,6 +21,7 @@ class BillFactory extends Factory
             'value' => $this->faker->randomFloat(null, 0, 80),
             'due_date' =>  $this->faker->dateTimeBetween('now', '+1 week'),
             'payment_date' =>  $this->faker->dateTimeBetween('-1 week', 'now'),
+
         ];
     }
 }
