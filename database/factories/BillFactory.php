@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\User;
+use App\Models\Client;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BillFactory extends Factory
@@ -17,7 +18,7 @@ class BillFactory extends Factory
         return [
             'invoice' => $this->faker->randomNumber(4),
             'installment' => $this->faker->randomNumber(1),
-            'client_id' => User::factory()->create()->id,
+            'client_id' => Client::factory()->create()->id,
             'value' => $this->faker->randomFloat(2, 0, 100),
             'due_date' =>  $this->faker->dateTimeBetween('now', '+1 week'),
             'payment_date' =>  $this->faker->dateTimeBetween('-1 week', 'now'),
